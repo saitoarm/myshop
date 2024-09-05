@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +31,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/myshop', [ShopController::class,'index'])->name('web.myshop');
+Route::resource('product_types', ProductTypeController::class);
 
 require __DIR__.'/auth.php';
